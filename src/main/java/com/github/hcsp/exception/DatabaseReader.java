@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class DatabaseReader {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         File projectDir = new File(System.getProperty("basedir", System.getProperty("user.dir")));
         String jdbcUrl = "jdbc:h2:file:" + new File(projectDir, "test").getAbsolutePath();
         System.out.println(jdbcUrl);
