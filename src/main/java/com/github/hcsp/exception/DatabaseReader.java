@@ -11,7 +11,7 @@ public class DatabaseReader {
 
         try (Connection connection = DriverManager.getConnection(jdbcUrl, "sa", "");
              PreparedStatement statement =
-                     connection.prepareStatement("select * from PULL_REQUESTS where number > ?")){
+                     connection.prepareStatement("select * from PULL_REQUESTS where number > ?")) {
             statement.setInt(1, 0);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -30,7 +30,7 @@ public class DatabaseReader {
 
     private static class SQLPackException extends SQLException {
 
-        public SQLPackException(String s, SQLPackException e) {
+        SQLPackException(String s, SQLPackException e) {
             super(s, e);
         }
     }
