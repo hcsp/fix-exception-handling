@@ -22,9 +22,16 @@ public class DatabaseReader {
                                 + " "
                                 + resultSet.getString(2));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLPackException e) {
+            throw new SQLPackException("数据库错误❌", e);
         }
 
+    }
+
+    private static class SQLPackException extends SQLException {
+
+        public SQLPackException(String s, SQLPackException e) {
+            super(s, e);
+        }
     }
 }
