@@ -4,7 +4,7 @@ import java.io.File;
 import java.sql.*;
 
 public class DatabaseReader {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         File projectDir = new File(System.getProperty("basedir", System.getProperty("user.dir")));
         String jdbcUrl = "jdbc:h2:file:" + new File(projectDir, "test").getAbsolutePath();
         System.out.println(jdbcUrl);
@@ -22,9 +22,6 @@ public class DatabaseReader {
                 }
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-
     }
 }
