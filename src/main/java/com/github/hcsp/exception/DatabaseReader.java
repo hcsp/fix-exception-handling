@@ -26,8 +26,8 @@ public class DatabaseReader {
                                 + " "
                                 + resultSet.getString(2));
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
