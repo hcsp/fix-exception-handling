@@ -26,7 +26,7 @@ public class DatabaseReader {
             }
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         } finally {
             if (connection != null) connection.close();
             if (statement != null) statement.close();
