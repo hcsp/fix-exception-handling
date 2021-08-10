@@ -261,3 +261,5 @@ select * from PULL_REQUESTS where id>? [42122-199]
 	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
 	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
 	at com.github.hcsp.exception.DatabaseReader.main(DatabaseReader.java:17)
+2021-08-10 22:13:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-199]
