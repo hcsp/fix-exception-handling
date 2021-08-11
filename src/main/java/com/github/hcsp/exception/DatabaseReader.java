@@ -8,10 +8,8 @@ public class DatabaseReader {
         File projectDir = new File(System.getProperty("basedir", System.getProperty("user.dir")));
         String jdbcUrl = "jdbc:h2:file:" + new File(projectDir, "test").getAbsolutePath();
         System.out.println(jdbcUrl);
-        try (
-                Connection connection = DriverManager.getConnection(jdbcUrl, "sa", "");
-                PreparedStatement statement = connection.prepareStatement("select * from PULL_REQUESTS where number > ?")
-        ){
+        try (Connection connection = DriverManager.getConnection(jdbcUrl, "sa", "")) {
+            PreparedStatement statement = connection.prepareStatement("select * from PULL_REQUESTS where number > ?");
             statement.setInt(1, 0);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -21,7 +19,6 @@ public class DatabaseReader {
                                 + resultSet.getString(2)
                                 + " "
                                 + resultSet.getString(2));
-                connection.createStatement();
             }
         }
     }
