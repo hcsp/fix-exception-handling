@@ -1,13 +1,10 @@
 package com.github.hcsp.exception;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class DatabaseReader {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         File projectDir = new File(System.getProperty("basedir", System.getProperty("user.dir")));
         String jdbcUrl = "jdbc:h2:file:" + new File(projectDir, "test").getAbsolutePath();
         System.out.println(jdbcUrl);
